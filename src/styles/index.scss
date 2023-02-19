@@ -1,0 +1,257 @@
+@use "./variables" as *;
+@use "./_utilities" as *;
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin, padding, and font */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit
+}
+
+/* line-height reset for large text */
+h1,
+h2 {
+  line-height: 1.1;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(114, 113, 113);
+  border-radius: 10px;
+  height: 200px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Set core body defaults */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General Styling */
+
+body {
+  font-family: $ff;
+  font-size: $fs-400;
+  font-weight: $fw-regular;
+  background-color: $clr-primary;
+  color: $clr-secondary;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(90%, 68.75em);
+}
+
+// navigation
+.nav {
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  .logo-container {
+    gap: 5px;
+    .logo {
+      width: 1.4rem;
+    }
+    .logo-title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.mobile-menu-toggle {
+  display: none;
+  cursor: pointer;
+  padding-inline: 0.7rem;
+  aspect-ratio: 1;
+  border: 0;
+  background-color: transparent;
+  background-image: url("../assets/menu.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 40em) {
+  .primary-navigation {
+    position: fixed;
+    inset: 0 0 0 60%;
+    max-height: 12em;
+    padding: 1rem 0 0 1rem;
+    margin: 3rem 1rem 0 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(1.5rem);
+    border-radius: 5px;
+    transform: translateX(120%);
+    transition: transform 350ms ease-in-out;
+  }
+  .primary-navigation > * + * {
+    margin-top: 1rem;
+  }
+  .primary-navigation[aria-expanded="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+ 
+  .mobile-menu-toggle[data-visible="true"] {
+    background-image: url("../assets/close.svg");
+  }
+}
+
+@media (min-width: 40em) {
+  .primary-navigation {
+    display: flex;
+    gap: 3rem;
+  }
+}
+
+// hero
+@media (max-width: 60em) {
+  .hero {
+    text-align: center;
+  }
+}
+
+// testimonials 
+.testimonials {
+  display: grid;
+  gap: 3rem;
+}
+
+.testimonial-title {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 60em) {
+  .testimonials {
+    grid-auto-flow: column;
+  }
+}
+
+// clients
+.clients {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 40em) {
+  .clients {
+    grid-auto-flow: column;
+  }
+}
+
+@media (max-width: 40em) {
+  .clients {
+    place-items: center;
+    img {
+      width: 70%;
+    }
+  }
+}
+
+// CTA
+.cta {
+  padding-inline: 4rem;
+  min-height: 15em;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 40em) {
+  .cta {
+    padding: 2em;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (min-width: 40em) {
+  .cta-content {
+    max-width: 70%;
+  }
+}
+
+// footer
+.bar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 1px;
+}
+
+.socials {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 40em) {
+  .socials {
+    text-align: center;
+    flex-direction: column;
+  }
+}
