@@ -10,7 +10,7 @@ function Clients() {
     )
 
   return (
-    <section className="clients mt-page">
+    <section id="clients" className="clients mt-page">
       {clientElements} 
     </section>
   )

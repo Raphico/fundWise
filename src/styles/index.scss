@@ -140,8 +140,12 @@ body {
     max-height: 12em;
     padding: 1rem 0 0 1rem;
     margin: 3rem 1rem 0 0;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(1.5rem);
+    background: linear-gradient(
+      -168.39deg,
+      #ffffff -278.56%,
+      #6d6d6d -78.47%,
+      #11101d 91.61%
+    );
     border-radius: 5px;
     transform: translateX(120%);
     transition: transform 350ms ease-in-out;

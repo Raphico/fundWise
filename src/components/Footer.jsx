@@ -8,7 +8,7 @@ function Footer() {
     </a>)
 
   return (
-    <footer className="mt-page flow">
+    <footer id="contacts" className="mt-page flow">
       <div className="bar"></div>
       <div className="socials flex">
         <p>

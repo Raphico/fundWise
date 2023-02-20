@@ -16,19 +16,23 @@ import dropbox from "./assets/dropbox.png"
 export const navigation = [
   {
     id: 1,
-    name: "Features"
+    name: "Features",
+    navigate: "#features"
   },
   {
     id: 2,
-    name: "Testimonials"
+    name: "Testimonials",
+    navigate: "#testimonials"
   },
   {
     id: 3,
-    name: "Clients"
+    name: "Clients",
+    navigate: "#clients"
   },
   {
     id: 4,
-    name: "Contacts"
+    name: "Contacts",
+    navigate: "#contacts"
   },
 ]
 

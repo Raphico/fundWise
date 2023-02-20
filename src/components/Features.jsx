@@ -10,7 +10,7 @@ function Features() {
   />)
 
   return (
-    <section>
+    <section id="features">
       {featureElements}
     </section>
   )

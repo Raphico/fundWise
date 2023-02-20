@@ -4,6 +4,7 @@ import Testimonial from "./Testimonial"
 function Testimonials() {
   const testimonialElements = testimonials.map(testimonial => 
     <Testimonial 
+      key={testimonial.feedback}
       feedback={testimonial.feedback}
       name={testimonial.name}
       position={testimonial.position}
@@ -11,7 +12,7 @@ function Testimonials() {
     />)
 
   return (
-    <section className="mt-page">
+    <section id="testimonials" className="mt-page">
       <h2 className="testimonial-title | fs-500 fw-700 text-center">
         Testimonials
       </h2>

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { navigation } from "../constants"
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 function Navbar() {
   const [nav, setNav] = useState(false)
@@ -9,16 +10,16 @@ function Navbar() {
   }
 
   const navElements = navigation.map(n => <li key={n.id}>
-    <a className="text-secondary fs-300 mb-2" href="#">
+    <AnchorLink className="text-secondary fs-300 mb-2" href={n.navigate}>
       {n.name}
-    </a>
+    </AnchorLink>
   </li>)
 
   return (
     <nav className="nav flex mt-5">
       <div className="logo-container flex">
         <img className="logo" src="/logo.svg" alt="logo" />
-        <h2 className="logo-title">
+        <h2 className="logo-title fw-700">
           Fund<span className="text-accent">Wise</span>
         </h2>
       </div>
