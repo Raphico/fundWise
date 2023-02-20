@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { navigation } from "../constants"
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import AnchorLink from "react-anchor-link-smooth-scroll"
+import { motion } from "framer-motion"
+import { navVariants } from "../utils/motion"
 
 function Navbar() {
   const [nav, setNav] = useState(false)
@@ -16,7 +18,12 @@ function Navbar() {
   </li>)
 
   return (
-    <nav className="nav flex mt-5">
+    <motion.nav 
+      variants={navVariants}
+      initial="hidden"
+      whileInView="show"
+      className="nav flex mt-5"
+    >
       <div className="logo-container flex">
         <img className="logo" src="/logo.svg" alt="logo" />
         <h2 className="logo-title fw-700">
@@ -41,7 +48,7 @@ function Navbar() {
       >
         {navElements}
       </ul>
-    </nav>
+    </motion.nav>
   )
 }
 

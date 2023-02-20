@@ -1,13 +1,26 @@
 import GetStarted from "./GetStarted"
 import hero from "../assets/hero.png"
+import { motion } from "framer-motion"
+import { staggerContainer, textVariant } from "../utils/motion"
 
 function Hero() {
   return (
-    <section className="hero even-columns mt-feature">
+    <motion.section 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="hero even-columns mt-feature"
+    >
       <div className="flow">
-        <h1 className="fs-600 fw-700">
+        <motion.h1 
+          variants={textVariant}
+          initial="hidden"
+          whileInView="show"
+          className="fs-600 fw-700"
+        >
           Your Partner in Smart Business Financing
-        </h1>
+        </motion.h1>
         <p>
           Our team of experts uses a methodology 
           to identify the best-customized financing
@@ -19,7 +32,7 @@ function Hero() {
       <div className="visual-container">
         <img src={hero} alt="hero image" />
       </div>
-    </section>
+    </motion.section>
   )
 }
 export default Hero

@@ -1,8 +1,15 @@
+import { CTAVariants } from "../utils/motion"
 import GetStarted from "./GetStarted"
+import { motion } from "framer-motion"
 
 function CTA() {
   return (
-    <section className="cta bg-dark-gradient box-shadow flex mt-page">
+    <motion.section 
+      variants={CTAVariants}
+      initial="hidden"
+      whileInView="show"
+      className="cta bg-dark-gradient box-shadow flex mt-page"
+    >
       <div className="cta-content flow">
         <h2 className="fs-500 fw-700">
           Try Our Service Right Now
@@ -14,7 +21,7 @@ function CTA() {
         </p>
       </div>
       <GetStarted />
-    </section>
+    </motion.section>
   )
 }
 export default CTA

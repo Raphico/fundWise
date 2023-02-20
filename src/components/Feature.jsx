@@ -1,12 +1,19 @@
 import GetStarted from "./GetStarted"
+import { motion } from "framer-motion"
+import { textVariant2 } from "../utils/motion"
 
 function Feature(props) {
   return (
     <section className="even-columns mt-feature">
       <div className="flow">
-        <h2 className="fs-500 fw-700">
+        <motion.h2 
+          variants={textVariant2}
+          initial="hidden"
+          whileInView="show"
+          className="fs-500 fw-700"
+        >
           {props.title}
-        </h2>
+        </motion.h2>
         <p>{props.feature}</p>
         <GetStarted />
       </div>

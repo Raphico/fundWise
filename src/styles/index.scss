@@ -52,6 +52,7 @@ html:focus-within {
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -137,17 +138,17 @@ body {
   .primary-navigation {
     position: fixed;
     inset: 0 0 0 60%;
-    max-height: 12em;
+    height: 11em;
     padding: 1rem 0 0 1rem;
     margin: 3rem 1rem 0 0;
-    background: linear-gradient(
+    background:  linear-gradient(
       -168.39deg,
       #ffffff -278.56%,
       #6d6d6d -78.47%,
       #11101d 91.61%
-    );
+    );;
     border-radius: 5px;
-    transform: translateX(120%);
+    transform: translateX(130%);
     transition: transform 350ms ease-in-out;
   }
   .primary-navigation > * + * {
