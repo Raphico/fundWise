@@ -1,11 +1,11 @@
-import { CTAVariants } from "../utils/motion"
+import { slideIn } from "../utils/motion"
 import GetStarted from "./GetStarted"
 import { motion } from "framer-motion"
 
 function CTA() {
   return (
     <motion.section 
-      variants={CTAVariants}
+      variants={slideIn("right")}
       initial="hidden"
       whileInView="show"
       className="cta bg-dark-gradient box-shadow flex mt-page"

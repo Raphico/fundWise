@@ -1,6 +1,6 @@
 import { socials } from "../constants"
 import { motion } from "framer-motion"
-import { footerVariants } from "../utils/motion"
+import {  variants } from "../utils/motion"
 
 function Footer() {
   const socialElements = socials.map(social => <a 
@@ -11,7 +11,7 @@ function Footer() {
 
   return (
     <motion.footer 
-      variants={footerVariants}
+      variants={variants}
       initial="hidden"
       whileInView="show"
       id="contacts" 

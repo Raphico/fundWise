@@ -1,6 +1,6 @@
 import { clients } from "../constants"
 import { motion } from "framer-motion"
-import { fadeIn } from "../utils/motion"
+import { variants } from "../utils/motion"
 
 function Clients() {
   const clientElements = clients.map(client => 
@@ -13,7 +13,7 @@ function Clients() {
 
   return (
     <motion.section
-      variants={fadeIn}
+      variants={variants}
       initial="hidden"
       whileInView="show" 
       id="clients" 

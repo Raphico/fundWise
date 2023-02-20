@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { navigation } from "../constants"
-import AnchorLink from "react-anchor-link-smooth-scroll"
 import { motion } from "framer-motion"
-import { navVariants } from "../utils/motion"
+import { variants } from "../utils/motion"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 function Navbar() {
   const [nav, setNav] = useState(false)
@@ -10,16 +10,19 @@ function Navbar() {
   const handleNav = () => {
     setNav(oldNavValue => !oldNavValue)
   }
-
+ 
   const navElements = navigation.map(n => <li key={n.id}>
-    <AnchorLink className="text-secondary fs-300 mb-2" href={n.navigate}>
+    <AnchorLink 
+      className="text-secondary fs-300 mb-2" 
+      href={n.navigate}
+    >
       {n.name}
     </AnchorLink>
   </li>)
 
   return (
     <motion.nav 
-      variants={navVariants}
+      variants={variants}
       initial="hidden"
       whileInView="show"
       className="nav flex mt-5"
@@ -42,7 +45,7 @@ function Navbar() {
 
       <ul 
         id="primary-navigation" 
-        className="primary-navigation"
+        className="primary-navigation flex"
         aria-expanded={nav}
         role="list"
       >

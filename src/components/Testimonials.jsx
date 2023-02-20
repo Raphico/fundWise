@@ -1,7 +1,7 @@
 import { testimonials } from "../constants"
 import Testimonial from "./Testimonial"
 import { motion } from "framer-motion"
-import { fadeIn, textVariant2 } from "../utils/motion"
+import { slideIn, variants } from "../utils/motion"
 
 function Testimonials() {
   const testimonialElements = testimonials.map(testimonial => 
@@ -15,14 +15,14 @@ function Testimonials() {
 
   return (
     <motion.section 
-      variants={fadeIn}
+      variants={variants}
       initial="hidden"
       whileInView="show"
       id="testimonials" 
       className="mt-page"
     >
       <motion.h2 
-        variants={textVariant2}
+        variants={slideIn("right")}
         initial="hidden"
         whileInView="show"
         className="testimonial-title | fs-500 fw-700 text-center"

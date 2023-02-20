@@ -1,7 +1,7 @@
 import { features } from "../constants"
 import Feature from "./Feature"
 import { motion } from "framer-motion"
-import { fadeIn } from "../utils/motion"
+import { variants } from "../utils/motion"
 
 function Features() {
   const featureElements = features.map(feature => <Feature 
@@ -13,7 +13,7 @@ function Features() {
 
   return (
     <motion.section 
-      variants={fadeIn}
+      variants={variants}
       initial="hidden"
       whileInView="show"
       id="features"
