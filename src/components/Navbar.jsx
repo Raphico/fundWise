@@ -2,22 +2,24 @@ import { useState } from "react"
 import { navigation } from "../constants"
 import { motion } from "framer-motion"
 import { variants } from "../utils/motion"
-import AnchorLink from "react-anchor-link-smooth-scroll"
+import { HashLink as Link } from "react-router-hash-link"
 
 function Navbar() {
   const [nav, setNav] = useState(false)
 
   const handleNav = () => {
     setNav(oldNavValue => !oldNavValue)
+    return <Navigate to="features" />
   }
  
   const navElements = navigation.map(n => <li key={n.id}>
-    <AnchorLink 
+    <Link 
+      smooth
       className="text-secondary fs-300 mb-2" 
-      href={n.navigate}
+      to={n.navigate}
     >
       {n.name}
-    </AnchorLink>
+    </Link>
   </li>)
 
   return (
