@@ -97,6 +97,10 @@ body {
   font-weight: $fw-regular;
   background-color: $clr-primary;
   color: $clr-secondary;
+  background-image: url("../assets/blob.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
 }
 
 .container {
