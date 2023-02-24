@@ -13,7 +13,7 @@ function Hero() {
       className="hero even-columns mt-feature"
     >
       <motion.div 
-        variants={slideIn}
+        variants={slideIn("left")}
         initial="hidden"
         whileInView="show"
         className="flow"

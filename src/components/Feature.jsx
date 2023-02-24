@@ -5,13 +5,18 @@ import { slideIn } from "../utils/motion"
 function Feature(props) {
   return (
     <section className="even-columns mt-feature">
-      <div className="flow">
+      <motion.div 
+        variants={slideIn("left")}
+        initial="hidden"
+        whileInView="show"
+        className="flow"
+      >
         <h2>
           {props.title}
         </h2>
         <p>{props.feature}</p>
         <GetStarted />
-      </div>
+      </motion.div>
 
       <motion.div 
         variants={slideIn("right")}
